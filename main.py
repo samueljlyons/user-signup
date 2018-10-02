@@ -9,4 +9,11 @@ app.config['DEBUG']=True
 def index():
     return render_template('signup.html')
 
+
+
+@app.route('/welcome')
+def welcome():
+    welcome=request.args.get('welcome')
+    return '<h1> Welcome!</h1>'.format(welcome)
+
 app.run()
