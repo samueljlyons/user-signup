@@ -11,9 +11,10 @@ def index():
 
 
 
-@app.route('/welcome')
+@app.route('/', methods=['POST'])
 def welcome():
-    welcome=request.args.get('welcome')
-    return '<h1> Welcome!</h1>'.format(welcome)
+    name=request.form('username')
+    print(name)
+    return '<h1> Welcome!' + name + '</h1>'
 
 app.run()
